@@ -165,7 +165,7 @@ TextEnvironment.prototype.renderToHTML = function() {
                 try { katex = require('katex'); }
                 catch(e) { throw 'katex is required to render math'; }
             }
-            var mathHTML = katex.renderToString(text);
+            var mathHTML = katex.renderToString(text, {throwOnError: false});
             this._html.putSpan(mathHTML);
             break;
         case 'cond-symbol':
